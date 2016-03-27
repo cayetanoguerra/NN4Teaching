@@ -117,6 +117,7 @@ class Net:
         for l in layers[1:]:
             self.layers.append(Layer(l, l_prev))
             l_prev = l
+        self.number_of_layers = len(self.layers)
 
     def output(self, x):
         o_aux = x
@@ -130,7 +131,7 @@ class Net:
             _y = labels[j]
             y = self.output(x)
             error = y - _y
-            for index_layer in range(len(self.layers))[:0:-1]:
+            for index_layer in range(self.number_of_layers)[:0:-1]:
                 error = error * self.layers[index_layer].o_derivate
                 self.layers[index_layer].W_delta = np.dot(error.reshape((len(error), 1)),
                                                           (np.append(self.layers[index_layer-1].o, 1.0))
@@ -140,5 +141,5 @@ class Net:
             error = error * self.layers[0].o_derivate
             self.layers[0].W_delta = np.dot(error.reshape((len(error), 1)), np.append(x, 1.0).reshape((1, len(x)+1)))
 
-            for index_layer in range(len(self.layers)):
+            for index_layer in range(self.number_of_layers):
                 self.layers[index_layer].W -= self.layers[index_layer].W_delta * lr
