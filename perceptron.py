@@ -23,7 +23,7 @@ def train(x_data, y_data):
 
     print "Training..."
 
-    for j in range(10000):
+    for j in xrange(10000):
         
         w0_d = []
         w1_d = []
