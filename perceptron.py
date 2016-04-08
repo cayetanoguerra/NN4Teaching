@@ -28,6 +28,7 @@ def train(x_data, y_data):
         w1_d = []
         w2_d = []
         b_d = []
+        
         for data, label in zip(x_data, y_data):
 
             o = sigmoid(w1*data[0] + w2*data[1] + b)
