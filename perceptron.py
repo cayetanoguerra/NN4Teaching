@@ -25,9 +25,9 @@ def train(x_data, y_data):
 
     for j in range(10000):
         
+        w0_d = []
         w1_d = []
         w2_d = []
-        w0_d = []
         
         for data, label in zip(x_data, y_data):
 
