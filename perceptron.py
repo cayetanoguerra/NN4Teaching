@@ -20,10 +20,11 @@ def train(x_data, y_data):
 
     w0, w1, w2 = np.random.rand(3)
     lr = 0.1
+    epochs = 10000
 
     print "Training..."
 
-    for _ in xrange(10000):
+    for _ in xrange(epochs):
         
         w0_d = []
         w1_d = []
