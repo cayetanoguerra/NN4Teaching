@@ -51,7 +51,6 @@ def train(x_data, y_data):
         print o
         print "-----------------------"
 
-    #print w1, w2, b
 
 train(x_data, y_data)
 
