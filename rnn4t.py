@@ -84,7 +84,7 @@ class RHiddenLayer:
 
     W_hidden = []  # Static variable
 
-    def __init__(self, inputs, hidden, activ_f=activ_f["Sigmoid"]):
+    def __init__(self, inputs, hidden, activ_f=activ_f["TanH"]):
         self.rows = hidden
         self.columns = self.rows + inputs + 1  # One column for bias
         if len(RHiddenLayer.W_hidden) is 0:

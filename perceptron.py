@@ -23,7 +23,7 @@ def train(x_data, y_data):
     lr = 0.1
 
     for j in range(10000):
-        print "Training..."
+        #print "Training..."
         w1_d = []
         w2_d = []
         b_d = []
@@ -32,6 +32,8 @@ def train(x_data, y_data):
             o = sigmoid(w1*x_data[i][0] + w2*x_data[i][1] + b)
 
             error = 2.*(o - y_data[i]) * sigmoid_derivate(o)
+            
+            
 
             w1_d.append(error * x_data[i][0])
             w2_d.append(error * x_data[i][1])
@@ -41,13 +43,13 @@ def train(x_data, y_data):
         w2 = w2 - (np.sum(w2_d)/4.) * lr
         b = b - (np.sum(b_d)/4.) * lr
 
-        print w1, w2, b
+        #print w1, w2, b
 
-    for i in range(len(x_data)):
-        o = sigmoid(w1*x_data[i][0] + w2*x_data[i][1] + b)
+    for data in x_data:
+        o = sigmoid(w1*data[0] + w2*data[1] + b)
         print o
 
-    print w1, w2, b
+    #print w1, w2, b
 
 train(x_data, y_data)
 

@@ -10,6 +10,10 @@ def sigmoid(x):
     return 1.0/(1.0 + np.exp(-x))
 
 
+def tanh(x):
+    return 2./(1. + np.exp(-2. * x)) - 1.
+
+
 def indentity(x):
     return x
 
@@ -40,7 +44,7 @@ neurons = 5
 inputs = 2
 
 hidden_layer = Layer(neurons, neurons + inputs, activ_f=indentity)
-output_layer = Layer(1, neurons, activ_f=sigmoid)
+output_layer = Layer(1, neurons, activ_f=tanh)
 
 original_inputs = np.zeros(neurons)
 inputs = np.asarray([1., 1.])
@@ -49,7 +53,7 @@ complete_input = np.append(inputs, original_inputs)
 
 y = np.asarray([])
 
-for i in xrange(10):
+for i in xrange(100):
 
     if i < 50:
         inputs = np.zeros(2)
@@ -65,7 +69,7 @@ for i in xrange(10):
     o = output_layer.output(h_o)
     y = np.append(y, h_o)
 
-y = y.reshape((10, 5))
+y = y.reshape((100, 5))
 
 plt.plot(y[:, 0], 'b')
 plt.plot(y[:, 1], 'r')
