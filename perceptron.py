@@ -27,16 +27,14 @@ def train(x_data, y_data):
         w1_d = []
         w2_d = []
         b_d = []
-        for i in range(len(x_data)):
+        for data, label in zip(x_data, y_data):
 
-            o = sigmoid(w1*x_data[i][0] + w2*x_data[i][1] + b)
+            o = sigmoid(w1*data[0] + w2*data[1] + b)
 
-            error = 2.*(o - y_data[i]) * sigmoid_derivate(o)
-            
-            
+            error = 2.*(o - label) * sigmoid_derivate(o)
 
-            w1_d.append(error * x_data[i][0])
-            w2_d.append(error * x_data[i][1])
+            w1_d.append(error * data[0])
+            w2_d.append(error * data[1])
             b_d.append(error)
 
         w1 = w1 - (np.sum(w1_d)/4.) * lr
@@ -49,6 +47,7 @@ def train(x_data, y_data):
         print data, "->", label
         o = sigmoid(w1*data[0] + w2*data[1] + b)
         print o
+        print "-----------------------"
 
     #print w1, w2, b
 
