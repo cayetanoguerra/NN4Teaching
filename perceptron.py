@@ -19,7 +19,6 @@ def sigmoid_derivate(o):
 def train(x_data, y_data):
 
     w1, w2, b = np.random.rand(3)
-
     lr = 0.1
 
     print "Training..."
@@ -32,7 +31,6 @@ def train(x_data, y_data):
         for data, label in zip(x_data, y_data):
 
             o = sigmoid(w1*data[0] + w2*data[1] + b)
-
             error = 2.*(o - label) * sigmoid_derivate(o)
 
             w1_d.append(error * data[0])
@@ -43,7 +41,6 @@ def train(x_data, y_data):
         w2 = w2 - np.sum(w2_d) * lr
         b = b - np.sum(b_d) * lr
 
-        
     for data, label in zip(x_data, y_data):
         print data, "->", label
         o = sigmoid(w1*data[0] + w2*data[1] + b)
