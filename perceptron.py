@@ -22,8 +22,10 @@ def train(x_data, y_data):
 
     lr = 0.1
 
+    print "Training..."
+
     for j in range(10000):
-        #print "Training..."
+        
         w1_d = []
         w2_d = []
         b_d = []
@@ -41,7 +43,7 @@ def train(x_data, y_data):
         w2 = w2 - (np.sum(w2_d)/4.) * lr
         b = b - (np.sum(b_d)/4.) * lr
 
-        #print w1, w2, b
+        
 
     for data, label in zip(x_data, y_data):
         print data, "->", label
