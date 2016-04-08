@@ -39,9 +39,9 @@ def train(x_data, y_data):
             w2_d.append(error * data[1])
             b_d.append(error)
 
-        w1 = w1 - (np.sum(w1_d)/4.) * lr
-        w2 = w2 - (np.sum(w2_d)/4.) * lr
-        b = b - (np.sum(b_d)/4.) * lr
+        w1 = w1 - (np.sum(w1_d)) * lr
+        w2 = w2 - (np.sum(w2_d)) * lr
+        b = b - (np.sum(b_d)) * lr
 
         
 
