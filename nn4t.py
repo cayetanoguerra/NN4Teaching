@@ -124,11 +124,9 @@ class Net:
         for layer in self.layers:
             o_aux = layer.output(o_aux)
         return o_aux
-
+                       
     def train(self, input_data, labels, lr=0.1):
-        for j in range(len(input_data)):
-            x = input_data[j]
-            _y = labels[j]
+        for x, _y in zip(input_data, labels):
             y = self.output(x)
             error = y - _y
             for index_layer in range(self.number_of_layers)[:0:-1]:
