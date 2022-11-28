@@ -16,7 +16,7 @@ rollback = 15
 x_data = []
 y_data = []
 
-for i in xrange(4900):
+for i in range(4900):
     x_data.append(zip(x1[i:i+rollback], x2[i:i+rollback]))
     y_data.append((x1[i+rollback], x2[i+rollback]))
 
@@ -49,9 +49,9 @@ rnet = rnn4t.RNet(layers=[2, 10, 2], rollback_steps=rollback)
 error_plot = []
 
 for i in range(100):
-    print "Epoch: ", i
+    print("Epoch: ", i)
     e = rnet.train(x_data, y_data, lr=0.1)
-    print "Error: ", e
+    print("Error: ", e)
     error_plot.append(e)
 
 plots_x = []
@@ -88,13 +88,11 @@ plt.show()
 
 #
 # for i in range(10000):
-#     print "Epoch: ", i
-#     print net.train(x_data, y_data)
+#     print("Epoch: ", i)
+#     print(net.train(x_data, y_data))
 #
 # print net.layers[0]
 #
 # for i in range(len(x_data)):
-#     print y_data[i]
-#     print net.output(x_data[i])
-
-
+#     print(y_data[i])
+#     print(net.output(x_data[i]))

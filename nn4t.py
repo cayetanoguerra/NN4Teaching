@@ -1,7 +1,7 @@
 #
 #   Neural Nets for Teaching
 #
-#   Cayetano Guerra Artal (c) 2016
+#   Cayetano Guerra Artal (c) 2022
 #
 #
 

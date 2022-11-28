@@ -1,7 +1,7 @@
 #
 #   Recursive Neural Nets for Teaching
 #
-#   Cayetano Guerra Artal (c) 2016
+#   Cayetano Guerra Artal (c) 2022
 #
 #
 
@@ -145,7 +145,7 @@ class RNet:
 
     def __init__(self, layers, rollback_steps=10):
         if len(layers) != 3:
-            print "Layers should be: [# of inputs, # hidden neurons, # output neurons]"
+            print("Layers should be: [# of inputs, # hidden neurons, # output neurons]")
         self.layers = []
         self.rollback_steps = rollback_steps
         self.number_of_inputs = layers[0]
@@ -158,7 +158,7 @@ class RNet:
 
     def output(self, x):
         if len(x) != self.rollback_steps:
-            print "Rollback steps and lenght of inputs must match."
+            print("Rollback steps and lenght of inputs must match.")
             raise  # implement exception
         i = 0
         o_aux = np.zeros(self.number_of_hidden)

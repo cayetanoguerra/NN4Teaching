@@ -32,13 +32,13 @@ y_data = nn4t.one_hot(data[:, 4].astype(int), 3)
 
 net = nn4t.Net(layers=[4, 5, 3])
 
-for i in xrange(900):
-    print "Epoch: ", i
-    print net.train(x_data, y_data)
+for i in range(900):
+    print("Epoch: ", i)
+    print(net.train(x_data, y_data))
 
-print net.layers[0]
+print(net.layers[0])
 
 for x, y in zip(x_data, y_data):
-    print y
-    print net.output(x)
+    print(y)
+    print(net.output(x))
 
